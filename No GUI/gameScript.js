@@ -70,10 +70,11 @@
     }
     
     function select(ele) {
-        document.getElementById(ele.id).innerHTML = currentPlayer.value;
+        document.getElementById(ele.id).innerHTML= currentPlayer.value;
         updateArray(ele.getAttribute("x"), ele.getAttribute("y"), currentPlayer.value);
         document.getElementById(ele.id).disabled = 'true';
         checkWin();
+        checkDraw();
         updateScore();
         if(playerType == 1){
             togglePlayerAI();
@@ -189,14 +190,14 @@
         for(i = 0; i <= ws-1; i++){
             var a = x+i;
             if(boardWidth <= a){
-                console.log("STOP");
+                //console.log("STOP");
             }
             else{
                 if(boardData[x+i][y] == currentPlayer.value){
                     count++;
                 }
                 else{
-                    console.log("FAIL");
+                   // console.log("FAIL");
                 }
             }
         }
@@ -215,14 +216,14 @@
         for(i = 0; i <= ws-1; i++){
             var a = x+i;
             if(boardWidth <= a){
-                console.log("STOP");
+                //console.log("STOP");
             }
             else{
                 if(boardData[x+i][y+i] == currentPlayer.value){
                     count++;
                 }
                 else{
-                    console.log("FAIL");
+                    //console.log("FAIL");
                 }
             }
         }
@@ -240,14 +241,14 @@
         for(i = 0; i <= ws-1; i++){
             var a = x+i;
             if(boardWidth <= a){
-                console.log("STOP");
+                //console.log("STOP");
             }
             else{
                 if(boardData[x+i][y-i] == currentPlayer.value){
                     count++;
                 }
                 else{
-                    console.log("FAIL");
+                    //console.log("FAIL");
                 }
             }
         }
@@ -258,6 +259,28 @@
             resetGame();
             
         }
+    }
+    
+    function checkDraw(){
+    var countI = 0;
+    	for(i=0; i<boardData.length; i++){
+            for(j=0; j<boardData.length; j++){
+        		if(boardData[i][j] == 'X'||boardData[i][j] == 'O'){
+                countI++;    
+                }
+            }
+        }
+        if(gameType == 1){
+            if(countI == 361){
+                alert("Gumoku Draw");
+            }
+        }
+        else{
+            if(countI == 9){
+                alert("Tic Tac Toe Draw")
+            }
+        }
+        console.log("COUNT OF DRW: "+ countI);
     }
     
     function updateScore(){

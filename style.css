@@ -1,11 +1,82 @@
-.container {
-    width: 800px;
+
+
+Panel1 {
+    width: 100px;
+    height: 500px;
+    background-color: lightblue;
+    color: black;
+    margin-top: 100px;
 }
+
+/* tictactoe title */
+ttttitle {
+    color: white;
+    font-size: 64px!important;
+    font-family: 'Lato';
+}
+
+/*play button top half of screen */
+P-button {
+    font-family: 'Lato';
+    color:white;
+    background-color: black;
+    font-size: 28px;
+    padding: 0.5%;
+}
+
+
+
+/* This is syling for the navigation bar */
+Navbar { 
+    list-style-type: none;
+    margin-bottom: 100px;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightblue;
+    position:fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration:none;
+}
+
+li a:hover:not(.active) {
+    background-color: white;
+    color: black;
+}
+
+.active {
+    background-color: white;
+    color: black;
+}
+
 
 banner {
     text-align: center;
     border-style: groove;
-    border-color: black;
+    border-color: red;
     border-width: 2px;
     border-radius: 5px;
     margin: 40%;
@@ -54,6 +125,37 @@ table tr td:first-child {
 }
 
 table tr td:last-child {
-	border-right: 0;
+	border-right: 0;}
 
+Gobutton { /* go button to play game */ 
+    background-color: red;
+}
+
+
+gInstructions {
+    font-family: 'Lato';
+    color: white;
+    font-size: 22px;
+}
+
+
+
+
+/**************LATO FONT*******************/
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v14/IY9HZVvI1cMoAHxvl0w9LVKPGs1ZzpMvnHX-7fPOuAc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* LATO FONT */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v14/22JRxvfANxSmnAhzbFH8PgLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }

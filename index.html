@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome to XOGame</title>
+    <meta charset="UTF-8">    
+    <link rel="stylesheet" href="style.css">
+    <script src="gameScript.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script></head>
     
-<link rel="stylesheet" href="style.css">
-<script src="gameScript.js"></script>
-</head>
+    
+    
+<body onload="updateGameType()">
+<!-------- This is the navigation bar ----->
+<Navbar>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li><a href="#about" style="color: lightblue;">.</a></li>
+</Navbar>
+<br><br>
 
-    <body onload="updateGameType()">
-        <h1 style="margin-bottom:-30px;">Tic Tac Toe</h1>
+ 
+<!-------- This is the first container ----->
+<div class="panel-body" style="background-color: lightblue; margin-bottom: 25px; height: 500px; text-align: center; padding-top: 150px;">
+    <ttttitle>TICTACTOE</ttttitle>
+    <br><br>
+    <a href="#intro">
+    <a class="active">
+    <a href="#intro"><P-button>Introduction</P-button></a>
+        </a>
+    </a>   
+    <br><br>
+    <a href="#game"> <P-button>Play</P-button></a>
+</div>  
+    
+  
+    
+<!-------- This is the introduction container ----->
+<div id="intro">
+<div class="container" style="width:100%;">
+  <div class="panel panel-default">
+    <div class="panel-body" style="background-color: lightgray; color: white; font-family: 'Lato';">  
+        <h1>Welcome to our Machine Learning Game</h1>
+        Here you will find our Machine Learning TicTacToe and Gomoku which was made as part of our third year project at the University of Kent. You can find the relevant documentation of our project at our gitHub repository. 
         <br><br>
+        <a class="github-button" href="https://github.com/baser930/Group-Project-CO600-Group-5.git" data-size="large" aria-label="Download ntkme/github-buttons on GitHub">Download</a>
+        <br><br>
+        <gInstructions>Game instructions:</gInstructions>
+        <br>
+         Select the gamemode  TicTacToe or Gumoko, select your opponent and click Go. You can reset the board by clicking the Reset button.
+        
+        <br><br>
+      </div>
+    </div>
+</div>
+</div>
+    
+
+    
+<!-------- This is the play container ----->
+<div id="game">
+<div class="container" style="width:100%">
+  <div class="panel panel-default">
+   
+      
+    <div class="panel-body">        
         <p id="scores" align="middle"></p>
         <p id="instructions" align="middle"></p>
       <div style="text-align:center;"><button onclick="resetPage()">Reset</button></div>
+        
       <div style="text-align:center;">
         <select id="gameChoice">
             <option value="0">Tic Tac Toe</option>
@@ -23,9 +79,16 @@
             <option value="0">Player Vs Player</option>
           <option value="1">Player Vs Computer</option>
       </select>
-        <button onclick="updateGameType()">Go</button>
-        <table id="sampleTable"></table>
+          
+        <Gobutton><button onclick="updateGameType()">Go</button></Gobutton>
+        <table id="sampleTable" style="margin-bottom: 50px"></table>
         </div>
+        </div>
+    </div>
+</div>
+</div>
         
-    </body>
+
+        
+</body>
 </html>
