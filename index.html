@@ -63,11 +63,14 @@
 <div id="game">
 <div class="container" style="width:100%">
   <div class="panel panel-default">
-   
-      
+  <div class="panel-heading" style="background-color: darkgray;">
+      <scoreboard>
+          <p id="scores" align="middle"></p>
+          <p id="instructions" align="middle"></p>
+      </scoreboard>
+    </div>
+
     <div class="panel-body">        
-        <p id="scores" align="middle"></p>
-        <p id="instructions" align="middle"></p>
       <div style="text-align:center;"><button onclick="resetPage()">Reset</button></div>
         
       <div style="text-align:center;">
@@ -81,7 +84,7 @@
       </select>
           
         <Gobutton><button onclick="updateGameType()">Go</button></Gobutton>
-        <table id="sampleTable" style="margin-bottom: 50px"></table>
+        <table id="sampleTable" style="margin-bottom: 50px;"></table>
         </div>
         </div>
     </div>

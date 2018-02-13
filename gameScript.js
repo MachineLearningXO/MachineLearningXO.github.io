@@ -58,7 +58,7 @@
           var tableString = "";
           for(i=0; i<boardWidth; i++){
               var id = j+','+i;
-              tableString += '<td><button style="margin-top:0px;width:99%;height:99%;" x="'+j+'" y="'+i+'" id="'+id+'" onclick="select(this);"/></td>';
+              tableString += '<td id="td='+id+'"><button style="margin-top:0px;width:99%;height:99%;" x="'+j+'" y="'+i+'" id="'+id+'" onclick="select(this);"/></td>';
           }
         tr.innerHTML = tableString;
           xTable.appendChild(tr);
@@ -262,9 +262,9 @@
     
     function updateScore(){
         if(playerType == 1){
-            document.getElementById("scores").innerHTML= "Scores: "+ player1.name + ': ' + player1.score + " " + playerAI.name + ": " + playerAI.score;
+            document.getElementById("scores").innerHTML= "Scores: " + player1.name + ': ' + player1.score + " " + playerAI.name + ": " + playerAI.score;
         }
         else{
-        document.getElementById("scores").innerHTML= "Scores: "+ player1.name + ': ' + player1.score + " " + player2.name + ": " + player2.score;
+        document.getElementById("scores" ).innerHTML= "Scores: "+ player1.name + ': ' + player1.score + " " + player2.name + ": " + player2.score;
         }
     }
