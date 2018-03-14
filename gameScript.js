@@ -9,7 +9,7 @@
   
     function updateGameType(){
         deleteRows();
-        playerType = document.getElementById('playerChoice').options[document.getElementById('playerChoice').selectedIndex].value;
+        //playerType = document.getElementById('playerChoice').options[document.getElementById('playerChoice').selectedIndex].value;
         gameType = document.getElementById('gameChoice').options[document.getElementById('gameChoice').selectedIndex].value;
         if(playerType == 1){
             currentPlayer = playerAI;
@@ -58,7 +58,7 @@
           var tableString = "";
           for(i=0; i<boardWidth; i++){
               var id = j+','+i;
-              tableString += '<td id="td='+id+'"><button style="margin-top:0px;width:99%;height:99%;" x="'+j+'" y="'+i+'" id="'+id+'" onclick="select(this);"/></td>';
+              tableString += '<td id="td='+id+'" x="'+j+'" y="'+i+'" onclick="select(this);"></td>';
           }
         tr.innerHTML = tableString;
           xTable.appendChild(tr);
@@ -70,7 +70,11 @@
     }
     
     function select(ele) {
-        document.getElementById(ele.id).innerHTML = currentPlayer.value;
+        if(ele.innerText == 'X'|| ele.innerText == 'O'){
+        }
+        else{
+        document.getElementById(ele.id).innerHTML = currentPlayer.value;        //Add current player value to element
+        ele.getAttribute("onclick")
         updateArray(ele.getAttribute("x"), ele.getAttribute("y"), currentPlayer.value);
         document.getElementById(ele.id).disabled = 'true';
         checkWin();
@@ -83,6 +87,7 @@
         }
         else{
             togglePlayer();
+        }
         }
   }
         

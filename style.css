@@ -98,6 +98,7 @@ td {
 }
 
 #sampleTable {
+    table-layout:fixed;
 	//border-collapse: collapse;
 	position: inherit;
     margin-top: auto;
@@ -107,7 +108,15 @@ td {
     margin-left: auto;
 	top: 135px;
     background-color: aliceblue;
+}
 
+#sampleTable td{
+    font-size: 70px;
+    
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    width: 20px;
+    height: 20px;
+    position: inherit;
 }
 
 table tr:first-child td {
