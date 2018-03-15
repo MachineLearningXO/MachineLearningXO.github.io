@@ -153,6 +153,8 @@
         }
         updateGameType();
     }
+
+
     
     function checkWin(){
         var winSize;

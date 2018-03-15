@@ -10,8 +10,15 @@
 </head>
 
 <body>
-
-	<table>
+    
+    <div style="background-color: darkgray; padding:0.5px;">
+    <scoreboard>
+    <p id="scores" align="middle">Scores: Player 1: 0 Player 2: 0</p>
+        <p id="scores" align="middle">Player 1(X): it's your turn</p>
+    </scoreboard>
+    </div>
+	<div style="text-align:center;"><button onClick="startGame()">Replay</button></div>
+    <table>
 		<tr>
 			<td class="cell" id="0"></td>
 			<td class="cell" id="1"></td>
@@ -31,7 +38,6 @@
 	<div class="endgame">
 		<div class="text"></div>
 	</div>
-	<div style="text-align:center;"><button onClick="startGame()">Replay</button></div>
 
   <script src="script.js"></script>
 </body>

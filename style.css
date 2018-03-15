@@ -100,10 +100,10 @@ td {
 #sampleTable {
     table-layout:fixed;
 	//border-collapse: collapse;
-	position: inherit;
+	//position: inherit;
     margin-top: auto;
     margin-bottom: auto;
-    height: 20vw;
+    height: 300px;
     margin-right: auto;
     margin-left: auto;
 	top: 135px;
@@ -112,11 +112,14 @@ td {
 
 #sampleTable td{
     font-size: 70px;
-    
     font-family: "Comic Sans MS", cursive, sans-serif;
-    width: 20px;
-    height: 20px;
+    
     position: inherit;
+}
+
+#download{
+    height: 200px;
+    text-align: center;
 }
 
 table tr:first-child td {
@@ -150,9 +153,9 @@ gInstructions {
 
 scoreboard {
     color: white;
-    font-family: 'Lato';
+    font-family: sans-serif;
     font-size: 20px;
-    font-weight: 800;
+    font-weight:0;
 }
 
 
