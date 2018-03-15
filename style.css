@@ -32,11 +32,11 @@ Navbar {
     margin-bottom: 100px;
     padding: 0;
     overflow: hidden;
-    background-color: lightblue;
+    background-color: #1072bd;
     position:fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #1072bd;
 }
 
 ul {
@@ -107,7 +107,7 @@ td {
     margin-right: auto;
     margin-left: auto;
 	top: 135px;
-    background-color: aliceblue;
+    background-color: white;
 }
 
 #sampleTable td{
