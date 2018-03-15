@@ -17,10 +17,12 @@
         if(gameType == 1){
             boardWidth = 19;
             document.getElementById('sampleTable').style.width = '90vw';
+            document.getElementById('sampleTable').style.height = '60vw';
         }
         else{
             boardWidth = 3;
             document.getElementById('sampleTable').style.width = '25vw';
+            document.getElementById('sampleTable').style.height = '25vw';
             //document.getElementsByClassName('cells').style.fontSize = "25px";
         }
         constructorFunc();
