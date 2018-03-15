@@ -11,6 +11,8 @@ const winCombos = [
 	[0, 4, 8],
 	[6, 4, 2]
 ]
+var huWins = 0;
+var aiWins = 0;
 
 const cells = document.querySelectorAll('.cell');
 startGame();
@@ -52,6 +54,9 @@ function checkWin(board, player) {
 	return gameWon;
 }
 
+function updateScores(){
+        document.getElementById("scores").innerHTML= "Scores: Player: " + huWins + " Computer: " + aiWins;}
+
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
@@ -61,6 +66,14 @@ function gameOver(gameWon) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
 	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+    console.log("Player win- " +gameWon.player);
+    if(gameWon.player == 'X'){
+        aiWins++;
+    }
+    else if(gameWon.player = 'O'){
+        huWins++;
+    }
+    updateScores();
 }
 
 function declareWinner(who) {

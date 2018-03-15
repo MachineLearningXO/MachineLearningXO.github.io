@@ -272,7 +272,7 @@
     
     function updateScore(){
         if(playerType == 1){
-            document.getElementById("scores").innerHTML= "Scores: " + player1.name + ': ' + player1.score + " " + playerAI.name + ": " + playerAI.score;
+            document.getElementById("scores").innerHTML= "Scores: Player 1: " + huPlayer + " Computer: " + aiWins;
         }
         else{
         document.getElementById("scores" ).innerHTML= "Scores: "+ player1.name + ': ' + player1.score + " " + player2.name + ": " + player2.score;
