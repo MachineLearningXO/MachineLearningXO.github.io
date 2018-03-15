@@ -88,10 +88,10 @@ h1 {
 
 td {
 	border:  2px solid #333;
-	height:  30px;
-	width:  0px;
+	//height:  30px;
+	//width:  0px;
 	text-align:  center;
-	vertical-align:  middle;
+	//vertical-align:  middle;
 	font-family:  "Comic Sans MS", cursive, sans-serif;
 	font-size:  10px;
 	cursor: pointer;
@@ -111,9 +111,8 @@ td {
 }
 
 #sampleTable td{
-    font-size: 70px;
+    font-size: 35px;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    
     position: inherit;
 }
 

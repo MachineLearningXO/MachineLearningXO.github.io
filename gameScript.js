@@ -20,7 +20,8 @@
         }
         else{
             boardWidth = 3;
-            document.getElementById('sampleTable').style.width = '20vw';
+            document.getElementById('sampleTable').style.width = '25vw';
+            //document.getElementsByClassName('cells').style.fontSize = "25px";
         }
         constructorFunc();
     }
@@ -58,7 +59,7 @@
           var tableString = "";
           for(i=0; i<boardWidth; i++){
               var id = j+','+i;
-              tableString += '<td id="td='+id+'" x="'+j+'" y="'+i+'" onclick="select(this);"></td>';
+              tableString += '<td class="cells" id="td='+id+'" x="'+j+'" y="'+i+'" onclick="select(this);"></td>';
           }
         tr.innerHTML = tableString;
           xTable.appendChild(tr);
