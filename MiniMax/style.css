@@ -21,6 +21,18 @@ table tr:first-child td {
 	border-top: 0;
 }
 
+button{
+    border-radius: 6px;
+    background-color: #1072bd;
+    border: none;
+    color: white;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
 table tr:last-child td {
 	border-bottom: 0;
 }
@@ -36,17 +48,18 @@ table tr td:last-child {
 .endgame {
   display: none;
   width: 200px;
-  top: 200px;
-  background-color: rgba(205,133,63, 0.8);
+  top: 245px;
+  background-color: #1072bd;
   position: absolute;
-  left: 50%;
+  right: 15%;
   margin-left: -100px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
   border-radius: 5px;
   color: white;
   font-size: 2em;
+    font-family: sans-serif;
 }
 
 scoreboard{

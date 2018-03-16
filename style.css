@@ -157,6 +157,44 @@ scoreboard {
     font-weight:0;
 }
 
+button{
+    border-radius: 6px;
+    background-color: #1072bd;
+    border: none;
+    color: white;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+#gameChoice{
+    border-radius: 6px;
+    background-color: #1072bd;
+    border: none;
+    color: white;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.endgame {
+  display: none;
+  width: 200px;
+  top: 245px;
+  background-color: #1072bd;
+  position: absolute;
+  right: 15%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 2em;
+}
 
 
 

@@ -2,6 +2,25 @@
 <html>
 <head>
     <title>Machine Learning XO</title>
+    <!------ The following is for the logo in the left hand of the title - also know as a favicon------->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicon.ico/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicon.ico/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicon.ico/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicon.ico/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicon.ico/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicon.ico/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon.ico/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/favicon.ico/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico/favicon-16x16.png">
+        <link rel="manifest" href="/favicon.ico/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/favicon.ico/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    <!-------------------------------------------------->
     <meta charset="UTF-8">    
     <link rel="stylesheet" href="style.css">
     <script src="gameScript.js"></script>
@@ -41,16 +60,22 @@
 <div id="intro">
 <div class="container" style="width:100%;">
   <div class="panel panel-default">
-    <div class="panel-body" style="background-color: lightgray; color: white; font-family: 'Lato';">  
+    <div class="panel-body" style="background-color: #cbcfd6; color: white; font-family: 'Lato';">  
         <h1>Welcome to our Machine Learning Game</h1>
-        Here you will find our Machine Learning TicTacToe and Gomoku which was made as part of our third year project at the University of Kent. You can find the relevant documentation of our project at our gitHub repository. 
+        Here you will find our Machine Learning TicTacToe and Gomoku which was made as part of our third year project at the University of Kent. 
+        <!--You can find the relevant documentation of our project at our gitHub repository. 
         <br><br>
-        <a class="github-button" href="https://github.com/baser930/Group-Project-CO600-Group-5.git" data-size="large" aria-label="Download ntkme/github-buttons on GitHub">Download</a>
+        <a class="github-button" href="https://github.com/baser930/Group-Project-CO600-Group-5.git" data-size="large" aria-label="Download ntkme/github-buttons on GitHub">Download</a>-->
         <br><br>
-        <gInstructions>Game instructions:</gInstructions>
+        <gInstructions>Tic Tac Toe instructions:</gInstructions>
         <br>
-         Select the gamemode  TicTacToe or Gumoko, select your opponent and click Go. You can reset the board by clicking the Reset button.
-        
+        The purpose: To achieve 3 of your character (X/O) in a row whether it be diagonal, horizontal or vertical. <br>
+        How to play: Start by selecting an available  square, wait for your opponent and repeat the process until you win, draw or lose.
+        <br>
+        <gInstructions>Gomoku instructions:</gInstructions>
+        <br>
+        The purpose: To achieve 5 of your character (X/O) in a row whether it be diagonal, horizontal or vertical. <br>
+        How to play: Start by selecting an available  square, wait for your opponent and repeat the process until you win, draw or lose.
         <br><br>
       </div>
     </div>
@@ -61,10 +86,10 @@
     
 <!-------- This is the play container ----->
 <div id="game">
-    <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;"><P-button style="background-color:#1072bd;">Play with a friend</P-button></div>
 <div class="container" style="width:100%">
   <div class="panel panel-default">
-  <div class="panel-heading" style="background-color: darkgray;">
+      <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;"><P-button style="background-color:#1072bd;">Play with a friend</P-button></div>
+  <div class="panel-heading" style="background-color: #cbcfd6;">
       <scoreboard>
           <p id="scores" align="middle"></p>
           <p id="instructions" align="middle"></p>
@@ -72,20 +97,21 @@
     </div>
 
     <div class="panel-body">        
-      <div style="text-align:center;"><button onclick="resetGame()">Reset</button></div>
+      <div style="text-align:center;"><button onclick="resetGame()" style="color:white">Reset</button></div>
         
       <div style="text-align:center;">
         <select id="gameChoice">
             <option value="0">Tic Tac Toe</option>
-          <option value="1">Gumoko</option>
+          <option value="1">Gomoku</option>
       </select>
           <!--<select id="playerChoice">
             <option value="0">Player Vs Player</option>
           <option value="1">Player Vs Computer</option>
       </select>-->
           
-        <Gobutton><button onclick="updateGameType()">Go</button></Gobutton>
+        <Gobutton><button style="color:white; padding: 0.9px 4px;" onclick="updateGameType()">Go</button></Gobutton>
         <table id="sampleTable" style="table-layout:fixed;" style="margin-bottom: 50px;"></table>
+          <div class="endgame" style="top:1070px;"><div class="text"></div></div>
         </div>
         </div>
     </div>
@@ -93,22 +119,24 @@
 </div>
     <!-------- This is the AI game container------->
     <div id="ai">
+        <div class="container" style="width:100%;">
         <div class="panel panel-default">
     <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;"><P-button style="background-color:#1072bd;">Play against our AI</P-button></div>
     <iframe src="MiniMax/tictactoe.html" style="width: 100%; height:450px;" frameBorder="0"></iframe>
-        </div></div>
+            </div></div></div>
     
     
     <!-------- This is the Java download container ------->
     <br><br>
     <div id="download">
+        <div class="container" style="width:100%;">
         <div class="panel panel-default">
     <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;"><P-button style="background-color:#1072bd;">Download our Java application</P-button></div>
-    <img style="margin-top:20px; margin-bottom:20px; width: 150px;" src="https://image.freepik.com/free-icon/java_318-32027.jpg"><br>
+    <a href="tahmoorgame.jar"><img style="margin-top:20px; margin-bottom:20px; width: 150px;" src="https://image.freepik.com/free-icon/java_318-32027.jpg"></a><br>
             <i style="font-size:12px;">Click on the Java logo to begin downloading our application</i>
         </div>
     
-    </div>
+        </div></div>
         
 
         

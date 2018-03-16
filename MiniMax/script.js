@@ -13,6 +13,7 @@ const winCombos = [
 ]
 var huWins = 0;
 var aiWins = 0;
+var tiesNo = 0;
 
 const cells = document.querySelectorAll('.cell');
 startGame();
@@ -55,17 +56,17 @@ function checkWin(board, player) {
 }
 
 function updateScores(){
-        document.getElementById("scores").innerHTML= "Scores: Player: " + huWins + " Computer: " + aiWins;}
+        document.getElementById("scores").innerHTML= "Scores: Player: " + huWins + " Draws: " + tiesNo + " Computer: " + aiWins;}
 
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
-		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
+		//document.getElementById(index).style.backgroundColor =
+			//gameWon.player == huPlayer ? "blue" : "red";
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	declareWinner(gameWon.player == huPlayer ? "Player wins!" : "Computer wins.");
     console.log("Player win- " +gameWon.player);
     if(gameWon.player == 'X'){
         aiWins++;
@@ -92,10 +93,12 @@ function bestSpot() {
 function checkTie() {
 	if (emptySquares().length == 0) {
 		for (var i = 0; i < cells.length; i++) {
-			cells[i].style.backgroundColor = "green";
+			//cells[i].style.backgroundColor = "green";
 			cells[i].removeEventListener('click', turnClick, false);
 		}
 		declareWinner("Tie Game!")
+        tiesNo++;
+        updateScores();
 		return true;
 	}
 	return false;

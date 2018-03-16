@@ -6,6 +6,7 @@
     var playerType;
     var currentPlayer;
     var boardData;
+    var drawsScore = 0;
   
     function updateGameType(){
         deleteRows();
@@ -73,6 +74,7 @@
     }
     
     function select(ele) {
+        document.querySelector(".endgame").style.display = "none";
         if(ele.innerText == 'X'|| ele.innerText == 'O'){
         }
         else{
@@ -84,9 +86,6 @@
         updateScore();
         if(playerType == 1){
             togglePlayerAI();
-        }
-        else if(playerType == -1){
-            
         }
         else{
             togglePlayer();
@@ -175,6 +174,7 @@
                 checkLeftUpDiaWin(i,j,winSize); //Works for both
             }
         }
+        checkDraw();
     }
     
     function checkRowWin(x,y,ws){
@@ -186,7 +186,7 @@
             }
         }
         if(count == ws){
-            alert(currentPlayer.name + ' wins!');
+            declareWinner(currentPlayer.name + ' wins!');
             currentPlayer.score++;
             updateScore();
             resetGame();
@@ -199,19 +199,17 @@
         for(i = 0; i <= ws-1; i++){
             var a = x+i;
             if(boardWidth <= a){
-                console.log("STOP");
             }
             else{
                 if(boardData[x+i][y] == currentPlayer.value){
                     count++;
                 }
                 else{
-                    console.log("FAIL");
                 }
             }
         }
         if(count == ws){
-            alert(currentPlayer.name + ' wins!');
+            declareWinner(currentPlayer.name + ' wins!');
             currentPlayer.score++;
             updateScore();
             resetGame();
@@ -225,19 +223,17 @@
         for(i = 0; i <= ws-1; i++){
             var a = x+i;
             if(boardWidth <= a){
-                console.log("STOP");
             }
             else{
                 if(boardData[x+i][y+i] == currentPlayer.value){
                     count++;
                 }
                 else{
-                    console.log("FAIL");
                 }
             }
         }
         if(count == ws){
-            alert(currentPlayer.name + ' wins!');
+            declareWinner(currentPlayer.name + ' wins!');
             currentPlayer.score++;
             updateScore();
             resetGame();
@@ -250,31 +246,50 @@
         for(i = 0; i <= ws-1; i++){
             var a = x+i;
             if(boardWidth <= a){
-                console.log("STOP");
             }
             else{
                 if(boardData[x+i][y-i] == currentPlayer.value){
                     count++;
                 }
                 else{
-                    console.log("FAIL");
                 }
             }
         }
         if(count == ws){
-            alert(currentPlayer.name + ' wins!');
+            declareWinner(currentPlayer.name + ' wins!');
             currentPlayer.score++;
             updateScore();
             resetGame();
             
         }
     }
+
+function checkDraw(){
+    var numOfAvalible = 0;
+    for(i=0; i<boardData.length; i++){
+            for(j=0; j<boardData.length; j++){
+                if(boardData[i][j] == null){
+                    numOfAvalible++;
+                }
+            }
+            }
+    if(numOfAvalible == 0){
+        drawsScore++;
+        updateScore();
+        declareWinner('Tie game!');
+    }
+}
+
+function declareWinner(text){
+    document.querySelector(".endgame").style.display = "block";
+	document.querySelector(".endgame .text").innerText = text;
+}
     
     function updateScore(){
         if(playerType == 1){
-            document.getElementById("scores").innerHTML= "Scores: Player 1: " + huPlayer + " Computer: " + aiWins;
+            document.getElementById("scores" ).innerHTML= "Scores: "+ player1.name + ': ' + player1.score + "  Draws: " + drawsScore + " " + playerAI.name + ": " + playerAI.score;
         }
         else{
-        document.getElementById("scores" ).innerHTML= "Scores: "+ player1.name + ': ' + player1.score + " " + player2.name + ": " + player2.score;
+        document.getElementById("scores" ).innerHTML= "Scores: "+ player1.name + ': ' + player1.score + "  Draws: " + drawsScore + " " + player2.name + ": " + player2.score;
         }
     }
