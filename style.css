@@ -112,6 +112,7 @@ td {
 
 #sampleTable td{
     font-size: 25px;
+    font-weight: bold;
     font-family: "Comic Sans MS", cursive, sans-serif;
     position: inherit;
 }

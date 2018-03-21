@@ -79,6 +79,12 @@
         }
         else{
         document.getElementById(ele.id).innerHTML = currentPlayer.value;        //Add current player value to element
+        if(currentPlayer.value == 'X'){
+            document.getElementById(ele.id).style.color = '#8dd14d'; //Was #ee5a3b
+        }
+        else if(currentPlayer.value == 'O'){
+            document.getElementById(ele.id).style.color = '#f3823d';
+        }
         ele.getAttribute("onclick")
         updateArray(ele.getAttribute("x"), ele.getAttribute("y"), currentPlayer.value);
         document.getElementById(ele.id).disabled = 'true';

@@ -1,6 +1,6 @@
 var origBoard;
-const huPlayer = 'O';
-const aiPlayer = 'X';
+const huPlayer = 'X';
+const aiPlayer = 'O';
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -38,6 +38,12 @@ function turnClick(square) {
 function turn(squareId, player) {
 	origBoard[squareId] = player;
 	document.getElementById(squareId).innerText = player;
+    if(player == 'X'){
+            document.getElementById(squareId).style.color = '#8dd14d'; //Was #ee5a3b
+        }
+        else if(player == 'O'){
+            document.getElementById(squareId).style.color = '#f3823d';
+        }
 	let gameWon = checkWin(origBoard, player)
 	if (gameWon) gameOver(gameWon)
 }
