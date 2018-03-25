@@ -46,7 +46,7 @@ table tr td:last-child {
 	border-right: 0;
 }
 
-.endgame {
+.scoreCard {
   display: none;
   width: 200px;
   top: 245px;

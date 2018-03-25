@@ -74,7 +74,7 @@
     }
     
     function select(ele) {
-        document.querySelector(".endgame").style.display = "none";
+        document.querySelector(".scoreCard").style.display = "none";
         if(ele.innerText == 'X'|| ele.innerText == 'O'){
         }
         else{
@@ -287,8 +287,8 @@ function checkDraw(){
 }
 
 function declareWinner(text){
-    document.querySelector(".endgame").style.display = "block";
-	document.querySelector(".endgame .text").innerText = text;
+    document.querySelector(".scoreCard").style.display = "block";
+	document.querySelector(".scoreCard .text").innerText = text;
 }
     
     function updateScore(){

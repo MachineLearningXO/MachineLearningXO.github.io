@@ -2,22 +2,20 @@
 
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Tic Tac Toe</title>
-  
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     
-    <div style="background-color: #cbcfd6; padding:0.5px;">
+    <div style="background-color: #cbcfd6; margin-top: -10px; width:101%; margin-left:-10px; padding:0.5px; margin-bottom:-30px;">
     <scoreboard>
     <p id="scores" align="middle">Scores: Player 1: 0 Draws: 0 Computer: 0</p>
         <p id="scores" align="middle">Player(O): it's your turn</p>
     </scoreboard>
     </div>
-	<div style="text-align:center;"><button onClick="startGame()">Replay</button></div>
+    <br><br>
+	<div style="text-align:center;"><button onClick="constructorFunc()">Replay</button></div>
     <table>
 		<tr>
 			<td class="cell" id="0"></td>
@@ -35,7 +33,7 @@
 			<td class="cell" id="8"></td>
 		</tr>
 	</table>
-	<div class="endgame">
+	<div class="scoreCard">
 		<div class="text"></div>
 	</div>
 
