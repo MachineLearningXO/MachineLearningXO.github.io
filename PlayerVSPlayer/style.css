@@ -1,3 +1,4 @@
+/*The following are customisations for the table on the webpage*/
 table {
     table-layout:fixed;
     margin-top: auto;
@@ -19,6 +20,7 @@ td {
     position: inherit;
 }
 
+/*The following removes the border surrounding the table*/
 table tr:first-child td {
 	border-top: 0;
 }
@@ -34,16 +36,10 @@ table tr td:first-child {
 }
 
 table tr td:last-child {
-	border-right: 0;}
-
-
-scoreboard {
-    color: white;
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight:0;
+	border-right: 0;
 }
 
+/*Customisation for the 'Go' and 'Replay' button*/
 button{
     border-radius: 6px;
     background-color: #1072bd;
@@ -56,6 +52,7 @@ button{
     font-size: 14px;
 }
 
+/*Customisation for the dropdown menu, where a player can choose the game mode.*/
 #gameChoice{
     border-radius: 6px;
     background-color: #1072bd;
@@ -68,6 +65,7 @@ button{
     font-size: 14px;
 }
 
+/*Customisation for div which appears once the game is won or drawn.*/
 .scoreCard {
   display: none;
   width: 200px;
@@ -81,4 +79,12 @@ button{
   border-radius: 5px;
   color: white;
   font-size: 2em;
+}
+
+/*Customisation for the div which holds information about scores and whos turn it is*/
+scoreboard {
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight:0;
 }

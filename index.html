@@ -1,92 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Machine Learning XO</title>
+      
     <!------ The following is for the logo in the left hand of the title - also know as a favicon------->
-        <link rel="apple-touch-icon" sizes="57x57" href="/Images/favicon.ico/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/Images/favicon.ico/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/Images/favicon.ico/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/Images/favicon.ico/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/Images/favicon.ico/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/Images/favicon.ico/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/Images/favicon.ico/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/Images/favicon.ico/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/Images/favicon.ico/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/Images/favicon.ico/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon.ico/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/Images/favicon.ico/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/Images/favicon.ico/favicon-16x16.png">
-        <link rel="manifest" href="/Images/favicon.ico/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/Images/favicon.ico/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/Images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/Images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/Images/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/Images/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+      
     <!------The following determines the character set used, links the appropraite javascript and css files and starts the game----------->
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script src="gameScript.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script></head>
-    <body>
-
- 
-<!-------- This is the navigation container ----->
-<div class="panel-body" style="background-color: #1072bd; margin-bottom: 25px; height: 350px; text-align: center; padding-top: 60px;">
-    <img src="Images/logo.png" style="width:800px; margin-top:-30px;">
-    <br><br>
-    <a href="#intro">
-    <a href="#intro"><P-button>Introduction</P-button></a>
-    </a>   
-    <br><br>
-    <a href="#game"> <P-button>Play with a friend</P-button></a><br>
-    <a href="#ai"> <P-button>Play against our AI</P-button></a>
-</div>  
-    
-  
-    
-<!-------- This is the introduction container ----->
-<div id="intro">
-<div class="container" style="width:100%;">
-  <div class="panel panel-default">
-    <div class="panel-body" style="background-color: #cbcfd6; color: white; font-family: 'Lato';">  
-        <h1>Welcome to our Machine Learning Game</h1>
-        Here you will find our Machine Learning TicTacToe and Gomoku which was made as part of our third year project at the University of Kent. 
-        <br><br>
-        <gInstructions>Tic Tac Toe instructions:</gInstructions>
-        <br>
-        The purpose: To achieve 3 of your character (X/O) in a row whether it be diagonal, horizontal or vertical. <br>
-        How to play: Start by selecting an available  square, wait for your opponent and repeat the process until you win, draw or lose.
-        <br>
-        <gInstructions>Gomoku instructions:</gInstructions>
-        <br>
-        The purpose: To achieve 5 of your character (X/O) in a row whether it be diagonal, horizontal or vertical. <br>
-        How to play: Start by selecting an available  square, wait for your opponent and repeat the process until you win, draw or lose.
-        <br><br>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body>
+      
+    <!-------- This is the navigation container ----->
+    <div class="panel-body" style="background-color: #1072bd; margin-bottom: 25px; height: 350px; text-align: center; padding-top: 60px;">
+      <img src="Images/logo.png" style="width:800px; margin-top:-30px;">
+      <br><br>
+      <a href="#intro">
+      <a href="#intro">
+        <P-button>Introduction</P-button>
+      </a>
+      </a>   
+      <br><br>
+      <a href="#game">
+        <P-button>Play with a friend</P-button>
+      </a>
+      <br>
+      <a href="#ai">
+        <P-button>Play against our AI</P-button>
+      </a>
+    </div>
+      
+    <!-------- This is the introduction container ----->
+    <div id="intro">
+      <div class="container" style="width:100%;">
+        <div class="panel panel-default">
+          <div class="panel-body" style="background-color: #cbcfd6; color: white; font-family: 'Lato';">
+            <h1 style="font-size:30px; font-weight:bold;">Welcome to Machine Learning XO</h1>
+            Here you will find our Tic Tac Toe and Gomoku games, as well as our Tic Tac Toe artificial intelligence game mode. This project was was made as part of our third year project at the University of Kent.
+            <br><br>
+            <gInstructions>Tic Tac Toe instructions:</gInstructions>
+            <br>
+            The purpose: To achieve 3 of your character (X/O) in a row whether it be diagonal, horizontal or vertical. <br>
+            How to play: Start by selecting an available  square, wait for your opponent and repeat the process until you win, draw or lose.
+            <br>
+            <gInstructions>Gomoku instructions:</gInstructions>
+            <br>
+            The purpose: To achieve 5 of your character (X/O) in a row whether it be diagonal, horizontal or vertical. <br>
+            How to play: Start by selecting an available  square, wait for your opponent and repeat the process until you win, draw or lose.
+            <br><br>
+          </div>
+        </div>
       </div>
     </div>
-</div>
-</div>
-    
-<!-------- This is the player vs player container ----->
-<div id="game">
-<div class="container" style="width:100%">
-  <div class="panel panel-default">
-      <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;"><P-button style="background-color:#1072bd;">Play with a friend</P-button></div>
-      <iframe src="PlayerVSPlayer/playerVsPlayer.html" style="width: 100%; height:501px;" frameBorder="0"></iframe>
+      
+    <!-------- This is the player vs player container ----->
+    <div id="game">
+      <div class="container" style="width:100%">
+        <div class="panel panel-default">
+          <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;">
+            <P-button style="background-color:#1072bd;">Play with a friend</P-button>
+          </div>
+          <iframe src="PlayerVSPlayer/playerVsPlayer.html" style="width: 100%; height:501px;" frameBorder="0"></iframe>
+        </div>
+      </div>
     </div>
-</div>
-</div>
+      
     <!-------- This is the player vs AI game container------->
     <div id="ai">
-        <div class="container" style="width:100%;">
+      <div class="container" style="width:100%;">
         <div class="panel panel-default">
-    <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;"><P-button style="background-color:#1072bd;">Play against our AI</P-button></div>
-    <iframe src="PlayerVSAI/playerVsAI.html" style="width: 100%; height:450px;" frameBorder="0"></iframe>
-            </div></div></div>
-    
-        <!-----This displays our logo at the bottom of the webpage----->
+          <div style="text-align:center; width:100%; padding:3px; background-color:#1072bd;">
+            <P-button style="background-color:#1072bd;">Play against our AI</P-button>
+          </div>
+          <iframe src="PlayerVSAI/playerVsAI.html" style="width: 100%; height:450px;" frameBorder="0"></iframe>
+        </div>
+      </div>
+    </div>
+      
+    <!-----This displays our logo at the bottom of the webpage----->
     <img style="margin-top:20px; margin-bottom:20px; width: 150px; margin-left:560px;" src="/Images/smallLogo-blue.png">
-            
-</body>
+  </body>
 </html>

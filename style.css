@@ -18,101 +18,12 @@ ttttitle {
 /*play button top half of screen */
 P-button {
     font-family: 'Lato';
+    font-weight: bold;
     color:white;
     background-color: black;
     font-size: 28px;
     padding: 0.5%;
 }
-
-
-
-/* This is syling for the navigation bar */
-Navbar { 
-    list-style-type: none;
-    margin-bottom: 100px;
-    padding: 0;
-    overflow: hidden;
-    background-color: #1072bd;
-    position:fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 8px 6px -6px #1072bd;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow:hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration:none;
-}
-
-li a:hover:not(.active) {
-    background-color: white;
-    color: black;
-}
-
-.active {
-    background-color: white;
-    color: black;
-}
-
-
-banner {
-    text-align: center;
-    border-style: groove;
-    border-color: red;
-    border-width: 2px;
-    border-radius: 5px;
-    margin: 40%;
-}
-
-h1 {
-    text-align: center;
-}
-
-
-Gobutton { /* go button to play game */ 
-    background-color: red;
-}
-
-
-gInstructions {
-    font-family: 'Lato';
-    color: white;
-    font-size: 22px;
-}
-
-
-
-button{
-    border-radius: 6px;
-    background-color: #1072bd;
-    border: none;
-    color: white;
-    padding: 2px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-}
-
-
 
 
 /**************LATO FONT*******************/

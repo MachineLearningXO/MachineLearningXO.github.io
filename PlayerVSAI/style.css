@@ -1,3 +1,12 @@
+/*The following are customisations for the table on the webpage*/
+table {
+	border-collapse: collapse;
+	position: absolute;
+	left: 50%;
+	margin-left: -155px;
+	top: 140px;
+}
+
 td {
 	border:  2px solid #333;
 	height:  100px;
@@ -10,28 +19,9 @@ td {
     font-weight: bold;
 }
 
-table {
-	border-collapse: collapse;
-	position: absolute;
-	left: 50%;
-	margin-left: -155px;
-	top: 140px;
-}
-
+/*The following removes the border surrounding the table*/
 table tr:first-child td {
 	border-top: 0;
-}
-
-button{
-    border-radius: 6px;
-    background-color: #1072bd;
-    border: none;
-    color: white;
-    padding: 2px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
 }
 
 table tr:last-child td {
@@ -46,6 +36,20 @@ table tr td:last-child {
 	border-right: 0;
 }
 
+/*Customisation for the 'Replay' button*/
+button{
+    border-radius: 6px;
+    background-color: #1072bd;
+    border: none;
+    color: white;
+    padding: 2px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/*Customisation for div which appears once the game is won or drawn.*/
 .scoreCard {
   display: none;
   width: 200px;
@@ -63,6 +67,7 @@ table tr td:last-child {
     font-family: sans-serif;
 }
 
+/*Customisation for the div which holds information about scores and whos turn it is*/
 scoreboard{
     color: white;
     //font-family: 'Lato';
