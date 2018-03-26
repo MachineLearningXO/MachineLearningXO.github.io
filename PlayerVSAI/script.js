@@ -144,14 +144,14 @@ function gameOver(gameWon) {
 		boardData[i].removeEventListener('click', turnClick, false);
 	}
 	declareWinner(gameWon.player == player1 ? "Player wins!" : "Computer wins.");
+}
     if(gameWon.player == 'X'){
-        computerWins++;
-    }
-    else if(gameWon.player = 'O'){
         playerWins++;
     }
+    else if(gameWon.player = 'O'){
+        computerWins++;
+    }
     updateScores();
-}
 }
 
 function emptySquares() {
