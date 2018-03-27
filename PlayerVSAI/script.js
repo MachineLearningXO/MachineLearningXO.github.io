@@ -54,7 +54,7 @@ function turn(chosenSquare, player) {
 function search(newBoard, player) {
     var possibleSquares = emptySquares();
 
-    if (checkWin(newBoard, player1)) {
+    if (checkWin(newBoard, player1) != null) {
         return {
             score: -10
         }
@@ -130,6 +130,7 @@ function checkDraw() {
         promptResult("Tie Game!")
         drawsScore++;
         updateScore();
+        setTimeout(constructorFunc, 2000);
         return true;
     }
     return false;
