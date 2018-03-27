@@ -50,7 +50,7 @@ button{
 }
 
 /*Customisation for div which appears once the game is won or drawn.*/
-.scoreCard {
+#scoreCard {
   display: none;
   width: 200px;
   top: 245px;

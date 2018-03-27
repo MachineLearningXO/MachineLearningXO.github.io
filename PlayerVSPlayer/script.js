@@ -75,7 +75,7 @@ function makeTable() {
     This method is called when a player selects an empty square on a baord. The primarly goal of this method is to update the board and table to include the next character selected. But it also makes calls to check if the player has won and either updates the score or changes the player.
 **/
 function select(ele) {
-    document.querySelector(".scoreCard").style.display = "none";
+    document.getElementById("scoreCard").style.display = "none";
     if (ele.innerText == 'X' || ele.innerText == 'O') {} else {
         document.getElementById(ele.id).innerHTML = currentPlayer.value; //Add current player value to element
         if (currentPlayer.value == 'X') {
@@ -147,10 +147,10 @@ function checkRowWin(x, y, ws) {
         }
     }
     if (count == ws) {
-        declareWinner(currentPlayer.name + ' wins!');
+        promptResult(currentPlayer.name + ' wins!');
         currentPlayer.score++;
         updateScore();
-        resetGame();
+        setTimeout(resetGame, 2000);
     }
 }
 
@@ -169,10 +169,10 @@ function checkColWin(x, y, ws) {
         }
     }
     if (count == ws) {
-        declareWinner(currentPlayer.name + ' wins!');
+        promptResult(currentPlayer.name + ' wins!');
         currentPlayer.score++;
         updateScore();
-        resetGame();
+        setTimeout(resetGame, 2000);
 
     }
 }
@@ -192,10 +192,10 @@ function checkRightUpDiaWin(x, y, ws) {
         }
     }
     if (count == ws) {
-        declareWinner(currentPlayer.name + ' wins!');
+        promptResult(currentPlayer.name + ' wins!');
         currentPlayer.score++;
         updateScore();
-        resetGame();
+        setTimeout(resetGame, 2000);
     }
 }
 
@@ -214,10 +214,10 @@ function checkLeftUpDiaWin(x, y, ws) {
         }
     }
     if (count == ws) {
-        declareWinner(currentPlayer.name + ' wins!');
+        promptResult(currentPlayer.name + ' wins!');
         currentPlayer.score++;
         updateScore();
-        resetGame();
+        setTimeout(resetGame, 2000);
 
     }
 }
@@ -237,16 +237,17 @@ function checkDraw() {
     if (numOfAvalible == 0) {
         drawsScore++;
         updateScore();
-        declareWinner('Tie game!');
+        promptResult('Tie game!');
+        setTimeout(resetGame, 2000);
     }
 }
 
 /**
     This method takes in a parameter which is printed in a stylish square on the website, thus prompting whether a player has won, lost or drawn.
 **/
-function declareWinner(text) {
-    document.querySelector(".scoreCard").style.display = "block";
-    document.querySelector(".scoreCard .text").innerText = text;
+function promptResult(text) {
+    document.getElementById("scoreCard").style.display = "block";
+    document.getElementById("prompt").innerText = text;
 }
 
 /**
@@ -270,6 +271,7 @@ function deleteRows() {
     This method resets all the elements in the array to be empty; thus creating a whole new game.
 **/
 function resetGame() {
+    document.getElementById("scoreCard").style.display = "none";
     for (i = 0; i < boardData.length; i++) {
         for (j = 0; j < boardData.length; j++) {
             boardData[i][j] = undefined;
