@@ -62,9 +62,9 @@ function turn(chosenSquare, currentPlayer) {
         document.getElementById(chosenSquare).style.color = '#f3823d';
     }
     document.getElementById(chosenSquare).removeEventListener('click', turnClick, false);
-    var gameWon = checkWin(currentState, currentPlayer)
-    if (gameWon != null) {
-        gameOver(gameWon);
+    var gameWinner = checkWin(currentState, currentPlayer)
+    if (gameWinner != null) {
+        gameOver(gameWinner);
     }
 }
 
@@ -130,21 +130,33 @@ function search(newBoard, currentPlayer) {
     return moves[bestMove];
 }
 
-
+/**
+    This checkWin method compares the board against the winCombos which are defined at the beginning of the file. If these match up then the gameWinner variable is assigned the winning player and returns that at the end of the method.
+**/
 function checkWin(board, currentPlayer) {
-    var plays = board.reduce((a, e, i) =>
+    /*var combos = board.reduce(
+    function(a,e,i){
+        if(e == currentPlayer){
+            return a.concat(i);
+        }
+        else{
+            return (a,[]);
+        }
+    }
+    )*/
+       var combos = board.reduce((a, e, i) =>
         (e == currentPlayer) ? a.concat(i) : a, []);
-    var gameWon = null;
+    var gameWinner = null;
     for (var [index, win] of winCombos.entries()) {
-        if (win.every(elem => plays.indexOf(elem) > -1)) {
-            gameWon = {
+            if (win.every(function(elem){return combos.indexOf(elem) > -1})) {
+            gameWinner = {
                 index: index,
                 currentPlayer: currentPlayer
             };
             break;
         }
     }
-    return gameWon;
+    return gameWinner;
 }
 
 /**
@@ -179,14 +191,14 @@ function updateScore() {
 /**
     This method is called when the game is over. It first removes all the action listeners on the board, so the game is no longer playable. Scores are then updated, a prompt is then show on the website and the game is reset.
 **/
-function gameOver(gameWon) {
+function gameOver(gameWinner) {
     for (var i = 0; i < boardData.length; i++) {
         boardData[i].removeEventListener('click', turnClick, false);
     }
-    if (gameWon.player == 'X') {
+    if (gameWinner.player == 'X') {
         promptResult("Player wins!");
         playerWins++;
-    } else if (gameWon.player = 'O') {
+    } else if (gameWinner.player = 'O') {
         promptResult("Computer wins.")
         computerWins++;
     }
