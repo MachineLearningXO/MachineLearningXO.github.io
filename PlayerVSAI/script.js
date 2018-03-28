@@ -134,21 +134,19 @@ function search(newBoard, currentPlayer) {
     This checkWin method compares the board against the winCombos which are defined at the beginning of the file. If these match up then the gameWinner variable is assigned the winning player and returns that at the end of the method.
 **/
 function checkWin(board, currentPlayer) {
-    /*var combos = board.reduce(
-    function(a,e,i){
-        if(e == currentPlayer){
-            return a.concat(i);
-        }
-        else{
-            return (a,[]);
-        }
-    }
-    )*/
-       var combos = board.reduce((a, e, i) =>
-        (e == currentPlayer) ? a.concat(i) : a, []);
+    var combos = board.reduce(
+        function(arrA, arrB, arrC) {
+            if (arrB == currentPlayer) {
+                return arrA.concat(arrC);
+            } else {
+                return arrA;
+            }
+        }, [])
     var gameWinner = null;
     for (var [index, win] of winCombos.entries()) {
-            if (win.every(function(elem){return combos.indexOf(elem) > -1})) {
+        if (win.every(function(i) {
+                return combos.indexOf(i) > -1
+            })) {
             gameWinner = {
                 index: index,
                 currentPlayer: currentPlayer
