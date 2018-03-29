@@ -71,14 +71,14 @@ function turn(chosenSquare, currentPlayer) {
 /**
     This method is the most important for the AI. It calculates the best possible square by making recursive call to this method, thus looking at further stages of the game to determine the best path.
 **/
-function search(newBoard, currentPlayer) {
+function search(lookAHeadBoard, currentPlayer) {
     var possibleSquares = emptySquares();
 
-    if (checkWin(newBoard, player1) != null) {
+    if (checkWin(lookAHeadBoard, player1) != null) {
         return {
             score: -10
         }
-    } else if (checkWin(newBoard, computer) != null) {
+    } else if (checkWin(lookAHeadBoard, computer) != null) {
         return {
             score: 10
         }
@@ -90,18 +90,18 @@ function search(newBoard, currentPlayer) {
     var moves = [];
     for (var i = 0; i < possibleSquares.length; i++) {
         var move = {};
-        move.index = newBoard[possibleSquares[i]];
-        newBoard[possibleSquares[i]] = currentPlayer;
+        move.index = lookAHeadBoard[possibleSquares[i]];
+        lookAHeadBoard[possibleSquares[i]] = currentPlayer;
         //Recursive calls to the search method (if statement - determines which players turn it is simulating)
         if (currentPlayer == computer) {
-            var result = search(newBoard, player1);
+            var result = search(lookAHeadBoard, player1);
             move.score = result.score;
         } else {
-            var result = search(newBoard, computer);
+            var result = search(lookAHeadBoard, computer);
             move.score = result.score;
         }
         //Determines the new board and adds the moves to the array, moves.
-        newBoard[possibleSquares[i]] = move.index;
+        lookAHeadBoard[possibleSquares[i]] = move.index;
         moves.push(move);
     }
 
